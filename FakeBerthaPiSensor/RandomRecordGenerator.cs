@@ -67,7 +67,7 @@ namespace FakeBerthaPiSensor
 
         public double GetTemperature ()
         {
-            return _bodyTemperatureRandom.Next(50, 85);
+            return _bodyTemperatureRandom.Next(36, 37);
         }
         public int GetHeartBeat()
         {
