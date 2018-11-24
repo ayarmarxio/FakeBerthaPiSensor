@@ -104,9 +104,9 @@ namespace FakeBerthaPiSensor
             return _ozoneRandom.Next(15, 90);
         }
 
-        public int GetUserId ()
+        public int GetUserId()
         {
-            return _userIdRandom.Next(1, 5);
+            return _userIdRandom.Next(1,5);
         }
     }
 }

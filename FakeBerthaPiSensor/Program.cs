@@ -15,6 +15,7 @@ namespace FakeBerthaPiSensor
         {
             UdpClient udpSender = new UdpClient(0) { EnableBroadcast = true };
             IPEndPoint endPoint = new IPEndPoint(IPAddress.Broadcast, 7000);
+            //udpSender.Connect(endPoint);
             Console.WriteLine("Broadcast ready. Get started Press Enter");
             Console.ReadLine();
             while (true)
@@ -35,7 +36,7 @@ namespace FakeBerthaPiSensor
                 double _ozone = _rand.GetOzone();
                 int _userId = _rand.GetUserId();
 
-                string sensorData = $"long:{_long}-\r\n lat: {_lat}-\r\n bpsystolic:{_bpSystolic}-\r\n bpdiastolic: {_bpDiastolic}-\r\n bodytemperature{_bodyTemperature}-\r\n heartbeatpersecond{_heartBeatPerSecond}-\r\n dust:{_dust}-\r\n sulphur:{_sulphur}-\r\n nitrogen:{_nitrogen}-\r\n fluor:{_fluor}-\r\n carbonmonoxide:{_carbonMonoxide}-\r\n ozone:{_ozone}-\r\n userid:{_userId}-\r\n";
+                string sensorData = $"long:{_long}\n lat: {_lat}\n bpsystolic:{_bpSystolic}\n bpdiastolic: {_bpDiastolic}\n bodytemperature:{_bodyTemperature}\n heartbeatpersecond:{_heartBeatPerSecond}\n dust:{_dust}\n sulphur:{_sulphur}\n nitrogen:{_nitrogen}\n fluor:{_fluor}\n carbonmonoxide:{_carbonMonoxide}\n ozone:{_ozone}\n userid:{_userId}\n";
 
                 Byte[] sendBytes = Encoding.ASCII.GetBytes(sensorData);
 
