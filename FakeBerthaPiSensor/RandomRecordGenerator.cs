@@ -108,7 +108,5 @@ namespace FakeBerthaPiSensor
         {
             return _userIdRandom.Next(1, 5);
         }
-
-
     }
 }
